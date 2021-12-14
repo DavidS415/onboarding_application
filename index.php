@@ -25,7 +25,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   table = document.getElementById("CandidateTable");
   switching = true;
   /* Make a loop that will continue until
-  no switching has been done: */
+  no switching has been done:! */
   while (switching) {
     // Start by saying: no switching is done:
     switching = false;
