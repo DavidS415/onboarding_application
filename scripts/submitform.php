@@ -7,20 +7,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   exit;
 }
 
-// MairaDB connection block/information
-
-$hostname = "localhost";
-$username = "david";
-$password = "Dknocks530";
-$db = "oba";
-
-// Connect to database or return an error message if connection fails
-
-$dbconnect=mysqli_connect($hostname,$username,$password,$db);
-
-if ($dbconnect->connect_error) {
-  die("Database connection failed: " . $dbconnect->connect_error);
-}
+require_once "../loginsys/config.php";
 
 // Translate data from HTML for into PHP variables
 
@@ -73,7 +60,7 @@ if(isset($_POST['submit'])) {
 
 // Return an error message if script/query fail or confirm success and provide links back to other pages
 
-    if (!mysqli_query($dbconnect, $query)) {
+    if (!mysqli_query($mysqli, $query)) {
         die('An error occurred. Your OBRF has not been submitted.');
     } else {
       echo "Your OBRF is being processed.";

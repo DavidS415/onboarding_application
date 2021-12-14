@@ -17,8 +17,8 @@ if(!isset($_SESSION["role"]) || $_SESSION["role"] !== "admin"){
 // function to connect and execute the query
 function filterTable($query)
 {
-    $connect = mysqli_connect("localhost", "david", "Dknocks530", "oba");
-    $filter_Result = mysqli_query($connect, $query);
+    require_once "loginsys/config.php";
+    $filter_Result = mysqli_query($mysqli, $query);
     return $filter_Result;
 }
 ?>

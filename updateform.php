@@ -9,20 +9,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 $_SESSION['tracker_placement_id'] = $_GET['tracker_placement_id'];
 $tracker_placement_id = $_GET['tracker_placement_id'];
 
-$hostname = "localhost";
-$username = "david";
-$password = "Dknocks530";
-$db = "oba";
-
-$conn = new mysqli($hostname, $username, $password, $db);
-
-if($conn->connect_error){
-	die("Connection failed ".$conn->connect_error);
-}
+require_once "loginsys/config.php";
 
 $sql = "select * from new_obrfs where tracker_placement_id='$tracker_placement_id'";
 
-$result = $conn->query($sql);
+$result = $mysqli->query($sql);
 
 if ($result->num_rows > 0){
 
@@ -297,6 +288,6 @@ CTO: <input type='number' id='cto' name='placement_cto' step='0.01' required val
 } else {
 	echo "Not Found";
 }
-$conn->close();
+$mysqli->close();
 
 ?>

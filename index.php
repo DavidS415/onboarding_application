@@ -79,18 +79,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
     // MairaDB connection block/information
 
-    $hostname = "localhost";
-    $username = "david";
-    $password = "Dknocks530";
-    $db = "oba";
-
-    // Connect to database or return an error message if connection fails
-    
-    $dbconnect=mysqli_connect($hostname,$username,$password,$db);
-
-    if ($dbconnect->connect_error) {
-      die("Database connection failed: " . $dbconnect->connect_error);
-        }
+    require_once "loginsys/config.php";
 
     ?>
     <table border="1" align="center" id="CandidateTable">
@@ -109,8 +98,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 // Query database for the table with data
 
-$query = mysqli_query($dbconnect, "SELECT * FROM new_obrfs")
-   or die (mysqli_error($dbconnect));
+$query = mysqli_query($mysqli, "SELECT * FROM new_obrfs")
+   or die (mysqli_error($mysqli));
 
 // Loop through the results and display each candidate in a table row
 
