@@ -57,6 +57,3 @@ CREATE TABLE new_users (
     role VARCHAR(50),
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
-
-INSERT INTO new_users (username, password, role)
-VALUES ('admin', 'password', 'admin');
