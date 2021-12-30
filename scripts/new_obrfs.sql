@@ -1,3 +1,7 @@
+CREATE DATABASE oba;
+
+GRANT ALL ON oba.* to obaadmin@localhost IDENTIFIED BY 'S3admin100pine'; 
+
 CREATE TABLE new_obrfs(
     id MEDIUMINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     branch VARCHAR(225),

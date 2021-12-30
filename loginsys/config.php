@@ -2,8 +2,8 @@
 
 // Database credentials 
 define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
+define('DB_USERNAME', 'obaadmin');
+define('DB_PASSWORD', 'S3admin100pine');
 define('DB_NAME', 'oba');
  
 // Attempt to connect to MySQL database
