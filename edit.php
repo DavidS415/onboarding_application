@@ -113,6 +113,7 @@ function filterTable($query)
             <option value='Paperwork in Progress'>Paperwork in Progress</option>
             <option value='Onboarding Complete'>Onboarding Complete</option>
           </select>
+          <input type='hidden' name='current_tracker_id' value='<?=$row['tracker_placement_id']?>'>
           <button type='submit'class='btn btn-primary'>Update</button>
         </form>
         </td>
