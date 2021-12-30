@@ -104,9 +104,9 @@ function filterTable($query)
           <td><?php echo $row['email_address'];?></td>
           <td><?php echo $row['cell_phone'];?></td>
           <td>
-          <form action='changestatus.php' method='post'>
+          <form action='scripts/changestatusscript.php' method='post'>
           <select name='current_status'> 
-            <option value='$current_status'>Current: <?php echo $row['current_status'];?></option>
+            <option value=<?php $row['current_status'];?>>Current: <?php echo $row['current_status'];?></option>
             <option value='OBRF Created'>OBRF Created</option>
             <option value='Background Started'>Background Started</option>
             <option value='Background Cleared'>Background Cleared</option>
