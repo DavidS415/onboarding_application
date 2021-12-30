@@ -12,6 +12,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="styles/styles.css" rel="stylesheet">
     <meta charset="utf-8">
     <title>Submit a new OBRF</title>
@@ -30,6 +31,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     </style>
   </head>
   <body>
+    <div id="logout">
+      <a href="loginsys/logout.php">Sign Out</a>
+    </div>
+    <div id="admin">
+      <a href="admin.php">Admin Page</a>
+    </div>
     <header>
         <h1>Welcome to the Onboarding Application</h1>
     </header>
@@ -279,7 +286,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                 <input type="number" id="cto" name="placement_cto" step="0.01" required>
             </li>
                 <input type='hidden' name='current_status' value='OBRF Created'>
-                <input type="submit" value="Submit" name="submit">
+                <input type="submit" value="Submit" name="submit" class="btn btn-primary">
             
         </ul>
     </form>

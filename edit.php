@@ -33,6 +33,7 @@ function filterTable($query)
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="styles/styles.css" rel="stylesheet">
     <meta charset="utf-8">
     <title>View or edit an OBRF</title>
@@ -41,12 +42,33 @@ function filterTable($query)
         border:1px solid black;
         align: center;
       }
+      table.menu {
+        width: auto;
+        margin-right: 25px;
+        margin-left: 10px;
+      }
+      p.menu-title{
+        width: auto;
+        margin-right: 25px;
+        margin-left: 20px;
+      }
+      form.menu-search {
+        width: auto;
+        margin-right: 25px;
+        margin-left: 10px;
+      }
     </style>
     <script>
 
     </script>
   </head>
   <body>
+    <div id="logout">
+      <a href="loginsys/logout.php">Sign Out</a>
+    </div>
+    <div id="admin">
+      <a href="admin.php">Admin Page</a>
+    </div>
     <header>
         <h1>Welcome to the Onboarding Application</h1>
     </header>
@@ -58,11 +80,11 @@ function filterTable($query)
         </ul>
     </nav>
     <main>
-      <form action="edit.php" method="post">
-          <input type="text" name="valueToSearch" placeholder="Value To Search"><br><br>
+      <form action="edit.php" method="post" class="menu-search">
+          <input type="text" name="valueToSearch" placeholder="Value To Search">
           <input type="submit" name="search" value="Filter"><br><br>
-      <p><strong>Search a candidates name or Placement ID to view more info. Click the Tracker ID to edit</strong></p>
-      <table>
+      <p class="menu-title"><strong>Search a candidates name or Placement ID to view more info. Click the Tracker ID to edit</strong></p>
+      <table class="menu">
         <tr>
           <th>Tracker Placement ID:</th>
           <th>Start Date:</th>
@@ -83,14 +105,15 @@ function filterTable($query)
           <td><?php echo $row['cell_phone'];?></td>
           <td>
           <form action='changestatus.php' method='post'>
-          <select name='current_status' action='onselect'> 
+          <select name='current_status'> 
+            <option value='$current_status'>Current: <?php echo $row['current_status'];?></option>
             <option value='OBRF Created'>OBRF Created</option>
             <option value='Background Started'>Background Started</option>
             <option value='Background Cleared'>Background Cleared</option>
             <option value='Paperwork in Progress'>Paperwork in Progress</option>
             <option value='Onboarding Complete'>Onboarding Complete</option>
           </select>
-          <input type='submit'>
+          <button type='submit'class='btn btn-primary'>Update</button>
         </form>
         </td>
         </tr>

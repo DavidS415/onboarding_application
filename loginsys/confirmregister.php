@@ -27,15 +27,29 @@ echo
 "<html>
 <head>
     <title>Update an OBRF</title>
-    <link href='../styles/styles.css' rel='stylesheet'>
     <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'>
+    <link href='../styles/styles.css' rel='stylesheet'>
     <style>
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 360px; padding: 20px; }
+        p.reg {
+            width: auto;
+            margin-right: 25px;
+            margin-left: 20px;
+        }
+        form.reg {
+            width: auto;
+            margin-right: 25px;
+            margin-left: 20px;
+        }
     </style>
 </head>
 <body>
-<header>
+    <div id='logout'>
+    <a href='loginsys/logout.php'>Sign Out</a>
+    </div>
+    <div id='admin'>
+    <a href='admin.php'>Admin Page</a>
+    </div>
+    <header>
         <h1>Welcome to the Onboarding Application</h1>
     </header>
 
@@ -47,11 +61,11 @@ echo
         </ul>
     </nav>
 
-<p>Would you like to confirm user $username request to access submitted at $created_at?</p>
-<form action='../scripts/confirmregisterscript.php' method='post'>
+<p class='reg'>Would you like to confirm user $username request to access submitted at $created_at?</p>
+<form action='../scripts/confirmregisterscript.php' method='post' class='reg'>
 <input type='hidden' name='id' value='$id'>
-<button type='submit'>Yes</button>
-<a href='../admin.php' class='button'>No</a>
+<button type='submit'class='btn btn-primary'>Yes</button>
+<a href='../admin.php' class='btn btn-primary'>No</a>
 
 </body>
 </html>";

@@ -63,9 +63,16 @@ echo
 "<html>
 <head>
     <title>Update an OBRF</title>
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css'>
     <link href='styles/styles.css' rel='stylesheet'>
 </head>
 <body>
+<div id='logout'>
+<a href='loginsys/logout.php'>Sign Out</a>
+</div>
+<div id='admin'>
+<a href='admin.php'>Admin Page</a>
+</div>
 <header>
         <h1>Welcome to the Onboarding Application</h1>
     </header>
@@ -278,7 +285,7 @@ Bill Rate: <input type='number' id='billing' name='bill_rate' step='0.01' requir
 CTO: <input type='number' id='cto' name='placement_cto' step='0.01' required value='$placement_cto'><br>
 </li>
 
-<input type ='submit'>
+<input type ='submit' class='btn btn-primary'>
 </ul>
 </form>
 

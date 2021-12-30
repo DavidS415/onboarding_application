@@ -26,6 +26,7 @@ function filterTable($query)
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="styles/styles.css" rel="stylesheet">
     <meta charset="utf-8">
     <title>Admin Page</title>
@@ -34,9 +35,20 @@ function filterTable($query)
         border:1px solid black;
         align: center;
       }
+      table.menu {
+        width: auto;
+        margin-right: 25px;
+        margin-left: 10px;
+      }
     </style>
   </head>
   <body>
+    <div id="logout">
+      <a href="loginsys/logout.php">Sign Out</a>
+    </div>
+    <div id="admin">
+      <a href="admin.php">Admin Page</a>
+    </div>
     <header>
         <h1>Welcome to the Onboarding Application</h1>
     </header>
@@ -48,7 +60,7 @@ function filterTable($query)
         </ul>
     </nav>
     <main>
-      <table>
+      <table class="menu">
         <tr>
           <th>Request ID:</th>
           <th>Username:</th>

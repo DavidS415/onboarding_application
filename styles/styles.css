@@ -29,3 +29,15 @@ input::-webkit-inner-spin-button {
 input[type=number] {
     -moz-appearance: textfield;
   }
+  #logout a:link{
+    padding: 25px;
+    float: right;
+  }
+  
+  #admin {
+    padding: 25px;
+  }
+  
+  nav li a {
+    font-size: 1.2rem;
+  }
