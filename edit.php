@@ -83,6 +83,7 @@ function filterTable($query)
       <form action="edit.php" method="post" class="menu-search">
           <input type="text" name="valueToSearch" placeholder="Value To Search">
           <input type="submit" name="search" value="Filter"><br><br>
+      </form>
       <p class="menu-title"><strong>Search a candidates name or Placement ID to view more info. Click the Tracker ID to edit</strong></p>
       <table class="menu">
         <tr>
@@ -120,7 +121,7 @@ function filterTable($query)
         </tr>
         <?php endwhile;?>
       </table>
-      </form>
+      
     </main>
   </body>
 </html>
